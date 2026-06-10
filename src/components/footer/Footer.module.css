@@ -1,0 +1,13 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers the fixed element */
+    padding: 5px;
+    color:blueviolet;
+    font-size: smaller;
+    font-weight: lighter;
+    width: 100%; /* Or set a specific width like 300px */
+    text-align: center;
+
+}
