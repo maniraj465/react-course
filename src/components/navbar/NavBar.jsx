@@ -1,8 +1,7 @@
 function NavBar() {
     return (
         <nav>
-            <h2>Click Here!</h2>
-            <button>Login</button>
+            <h2>Navigation</h2>
         </nav>
     );
 }
