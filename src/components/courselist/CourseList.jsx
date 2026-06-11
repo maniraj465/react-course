@@ -1,9 +1,10 @@
 import Course from '../course/Course';
 import styles from './CourseList.module.css';
+import { useState } from 'react';
 
 function CourseList () {
 
-    const courses = [
+    const [courses, setCourses] = useState([
         {
             id: 1,
             courseName: 'React - The Complete Guide (incl. Next.js, Redux)',
@@ -154,8 +155,13 @@ function CourseList () {
             show: true,
             discountPercentage: 2
         }
-        ];
+    ]);
     
+    function handleHideCourse(courseId) {
+        // console.log("Hiding course with id:", courseId);
+        setCourses(prevCourses => prevCourses.filter(course => course.id !== courseId));
+    }
+
     const courseList = courses.map(
         (course) => <Course 
                         key = {course.id}
@@ -167,6 +173,8 @@ function CourseList () {
                         rating = {course.rating}
                         show = {course.show}
                         discountPercentage = {course.discountPercentage}
+                        hideCourse = {handleHideCourse}
+                        id = {course.id}
                     />
     );
     return (
