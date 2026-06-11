@@ -79,7 +79,9 @@ Course.propTypes = {
     courseImg: PropTypes.string,
     rating: PropTypes.number,
     show: PropTypes.bool,
-    discountPercentage: PropTypes.number
+    discountPercentage: PropTypes.number,
+    hideCourse: PropTypes.func,
+    id: PropTypes.number
 };
 
 
