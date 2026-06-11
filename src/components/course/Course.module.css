@@ -1,65 +1,96 @@
 /* Course card */
 .card {
-    background-color: #20df9e;
+    background-color: oklch(100% 0 0deg);
     max-width: 350px;
-    border: 1px solid black;
-    border-radius: 4px;
+    border: 1px solid #cccccc80;
+    border-radius: 15px;
     margin: 10px;
     padding: 15px;
     font-family: sans-serif;
     display: inline-block;
     text-align: left;
+    vertical-align: top;
+    width: 350px;
+    height: 550px;
 }
+
 .courseImg {
     display: block;
     background-color: #fff;
-    border: 1px solid black;
+    border: 1px solid #cccccc80;
     border-radius: 4px;
     width: 350px;
-}
+    text-align: center;
+}   
 
 .card img {
-    display: block;
     width: 250px;
     height: 250px;
-    margin: auto;   
+    margin: 0;   
+}
+
+.cardContainer {
+
+}
+
+.courseName {
+    display: block;
+    /* height: 7dvh; */
+    margin: 0;  
+}
+
+.courseDescription {
+    display: block;
+    /* height: 9dvh; */
+    margin: auto;  
 }
 
 /* Rating stars */
 .rating {
-    display: block;
-}
-
-.starDisplay {
     font-size: 1.5em;
     display: block;
     gap: 4px; 
 }
 
-.starDisplay .star.filled {
+.rating .star.filled {
     color: #f90;
 }
 
-.starDisplay .star.empty {
+.rating .star.empty {
     color: #ccc;
 }
 
-.starDisplay p {
+.rating p {
     display: inline-block;
     font-size: medium;
     margin-right: 10px;
 }
 
+/* background-color: #ff9900 */
 .addCart {
-    background-color: #ff9900;
+    background-color: #2196F3;
     width: 100%;
     text-align: center;
     display: block;
     margin: auto;
-    padding: 5px 0px;
+}
+
+.addCart button {
+    background-color: #2196F3;
+    border-color: #2196F3;
+    border-style: hidden;
+    color: #fff;
+    font-size: medium;
+    font-weight: bold;
+    padding: 10px 0px;
+    width: 100%;
 }
 
 p {
     padding: 0;
     margin: 10px 0px;
+}
+
+body {
+    font-family: sans-serif;
 }

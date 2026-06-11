@@ -18,11 +18,15 @@ function Course ({
                 <div className={styles.courseImg}>
                     <img src={courseImg} alt="Course Logo" />
                 </div>
-                <h3>{courseName}</h3>
-                <p>{courseDescription.length > 100 ? `${courseDescription.substring(0, 330)}...` : courseDescription}</p> 
-                 
+                <div className={styles.courseName}>
+                    <h3>{courseName}</h3>
+                </div>
+                <div className={styles.courseDescription}>
+                    {/* <p>{courseDescription.length > 100 ? `${courseDescription.substring(0, 400)}...` : courseDescription}</p>  */}
+                    <p>{courseDescription}</p> 
+                </div>
                 
-                <div className={styles.starDisplay}>
+                <div className={styles.rating}>
                     <p>Rating: {rating}</p>
                     {Array.from({ length: 5 }, (_, index) => {
                         const starNumber = index + 1;
@@ -36,7 +40,7 @@ function Course ({
                 <p>Price: &#x20B9;{coursePrice}</p>
                 <p>Author: {courseAuthor}</p>
                 <div className={styles.addCart}>
-                    <p>Add to cart</p>
+                    <button>Add to cart</button>
                 </div>
             </div>
         );
