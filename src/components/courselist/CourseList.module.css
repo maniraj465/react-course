@@ -1,10 +1,44 @@
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+  width: 80%;
   max-width: 1360px;
   margin: 0 auto;
   padding: 5px 0;
   align-items: stretch;
+}
+
+.fullscreen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.26);
+  z-index: 9999;
+}
+
+.loading {
+  width: 80px;
+}
+
+.scrollTop {
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    padding: 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    width: 65px;
+    background: rgba(0, 0, 0, 0.444);
+    color: #fff;
+}
+.scrollTop:hover {
+    background: #2563eb;
 }
