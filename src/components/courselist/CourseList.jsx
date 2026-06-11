@@ -10,8 +10,9 @@ function CourseList () {
             courseDescription: 'Dive in and learn React.js from scratch! Learn React, Hooks, Redux, React Router, Next.js, Best Practices and way more!',
             coursePrice: 629.00,
             courseAuthor: 'Maniraj',
-            rating: 5
-            // show: false
+            rating: 5,
+            show: true,
+            discountPercentage: 0
         },
         {
             id: 2,
@@ -19,7 +20,9 @@ function CourseList () {
             courseDescription: 'Master TypeScript from the ground up. Learn interfaces, generics, advanced types, and how to integrate it perfectly with React and Node.',
             coursePrice: 499.00,
             courseAuthor: 'Sarah Jenkins',
-            rating: 4.8
+            rating: 4.8,
+            show: true,
+            discountPercentage: 15
         },
         {
             id: 3,
@@ -27,7 +30,9 @@ function CourseList () {
             courseDescription: 'Build fast, SEO-friendly full-stack apps using Next.js 14. Covers App Router, Server Actions, SSR, and deployment to Vercel.',
             coursePrice: 799.00,
             courseAuthor: 'Alex Rivera',
-            rating: 4.7
+            rating: 4.7,
+            show: true,
+            discountPercentage: 5
         },
         {
             id: 4,
@@ -35,7 +40,9 @@ function CourseList () {
             courseDescription: 'Learn backend development by building powerful REST APIs. Master authentication, security best practices, and database optimization.',
             coursePrice: 549.00,
             courseAuthor: 'Maniraj',
-            rating: 3.9
+            rating: 3.9,
+            show: true,
+            discountPercentage: 20
         },
         {
             id: 5,
@@ -43,7 +50,9 @@ function CourseList () {
             courseDescription: 'Design modern, responsive, and beautiful websites quickly using Tailwind CSS. Includes grid layouts, animations.',
             coursePrice: 329.00,
             courseAuthor: 'Emma Watson',
-            rating: 4.5
+            rating: 4.5,
+            show: true,
+            discountPercentage: 8
         },
         {
             id: 6,
@@ -51,7 +60,9 @@ function CourseList () {
             courseDescription: 'Stop struggling with global state. Deep dive into Redux Toolkit, RTK Query, thunks, and middleware for applications.',
             coursePrice: 450.00,
             courseAuthor: 'David Kim',
-            rating: 4.2
+            rating: 4.2,
+            show: true,
+            discountPercentage: 10
         },
         {
             id: 7,
@@ -59,7 +70,9 @@ function CourseList () {
             courseDescription: 'The only course you need to learn web development. Covers HTML, CSS, JS, React, Node, PostgreSQL, and cloud hosting.',
             coursePrice: 1299.00,
             courseAuthor: 'Maniraj',
-            rating: 4.9
+            rating: 4.9,
+            show: true,
+            discountPercentage: 18
         },
         {
             id: 8,
@@ -67,7 +80,9 @@ function CourseList () {
             courseDescription: 'Demystify closures, prototypal inheritance, execution contexts, event loops, and asynchronous programming once and for all.',
             coursePrice: 399.00,
             courseAuthor: 'Carlos Mendez',
-            rating: 4.6
+            rating: 4.6,
+            show: true,
+            discountPercentage: 14
         },
         {
             id: 9,
@@ -75,7 +90,9 @@ function CourseList () {
             courseDescription: 'Write robust unit and integration tests using Jest and React Testing Library. Learn TDD, mocking APIs, and CI/CD integration.',
             coursePrice: 599.00,
             courseAuthor: 'Sophia Patel',
-            rating: 4.4
+            rating: 4.4,
+            show: true,
+            discountPercentage: 7
         },
         {
             id: 10,
@@ -83,7 +100,9 @@ function CourseList () {
             courseDescription: 'Move beyond REST. Learn how to design efficient schemas, write mutations, and manage client-side state using Apollo Client.',
             coursePrice: 699.00,
             courseAuthor: 'Marcus Vance',
-            rating: 4.1
+            rating: 4.1,
+            show: true,
+            discountPercentage: 11
         },
         {
             id: 11,
@@ -91,7 +110,9 @@ function CourseList () {
             courseDescription: 'Think like a designer. Learn color theory, typography, spacing, and wireframing in Figma to build beautiful user interfaces.',
             coursePrice: 349.00,
             courseAuthor: 'Elena Rostova',
-            rating: 4.3
+            rating: 4.3,
+            show: true,
+            discountPercentage: 3
         },
         {
             id: 12,
@@ -99,7 +120,9 @@ function CourseList () {
             courseDescription: 'Build scalable and incredibly fast backends using Python. Master Django for monoliths and FastAPI for microservices architectures.',
             coursePrice: 629.00,
             courseAuthor: 'Maniraj',
-            rating: 3.5
+            rating: 3.5,
+            show: true,
+            discountPercentage: 16
         },
         {
             id: 13,
@@ -107,7 +130,9 @@ function CourseList () {
             courseDescription: 'Write code your team will love. Learn SOLID principles, design patterns, refactoring techniques, and architectural best practices.',
             coursePrice: 499.00,
             courseAuthor: 'Robert Chen',
-            rating: 4.8
+            rating: 4.8,
+            show: true,
+            discountPercentage: 9
         },
         {
             id: 14,
@@ -115,7 +140,9 @@ function CourseList () {
             courseDescription: 'Containerize your React and Next.js applications. Learn multi-stage builds, orchestration, and seamless deployments.',
             coursePrice: 579.00,
             courseAuthor: 'Liam O\'Connor',
-            rating: 4.0
+            rating: 4.0,
+            show: true,
+            discountPercentage: 17
         },
         {
             id: 15,
@@ -123,7 +150,9 @@ function CourseList () {
             courseDescription: 'Analyze and fix slow websites. Master code-splitting, lazy loading, image optimization, and Core Web Vitals profiling.',
             coursePrice: 649.00,
             courseAuthor: 'Aisha Rahman',
-            rating: 4.7
+            rating: 4.7,
+            show: true,
+            discountPercentage: 2
         }
         ];
     
@@ -137,6 +166,7 @@ function CourseList () {
                         courseImg = {course.courseImg}
                         rating = {course.rating}
                         show = {course.show}
+                        discountPercentage = {course.discountPercentage}
                     />
     );
     return (

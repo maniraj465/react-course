@@ -11,7 +11,8 @@ function Course ({
     courseAuthor = 'Default  - Maniraj',
     courseImg = heroLogo,
     rating = 2.5,
-    show = true
+    show = true,
+    discountPercentage = 0
 }) {
     
     const [addedToCart, setAddedToCart] = useState(false);
@@ -47,19 +48,15 @@ function Course ({
                     })}
                 </div>
                 <div className={styles.coursePrice}>
-                    <p>Price: &#x20B9;{coursePrice}</p>
+                    {discountPercentage > 0 
+                        ? <><p className={styles.discountPrice}>Price: &#x20B9;<strike>{coursePrice}</strike> &#x20B9;{Math.round(coursePrice - (coursePrice * discountPercentage / 100))} - {discountPercentage}% off</p></> 
+                        : <p>Price: &#x20B9;{coursePrice}</p>}
                 </div>
                 <div className={styles.courseAuthor}>
                     <p>Author: {courseAuthor}</p>
                 </div>
                 <div className={addedToCart ? styles.addedToCart : styles.addCart}>
                     <button onClick={(event) => AddToCart(event, courseName)}>{addedToCart ? "Added to cart" : "Add to cart"}</button>
-                    
-                    {/* {
-                        !addedToCart 
-                        ? <button onClick={(event) => AddToCart(event, courseName)}>Add to cart</button>
-                        : <button onClick={(event) => AddToCart(event, courseName)}>Add to cart</button>
-                    } */}
                 </div>
                 <p></p>
             </div>
@@ -81,7 +78,8 @@ Course.propTypes = {
     courseAuthor: PropTypes.string,
     courseImg: PropTypes.string,
     rating: PropTypes.number,
-    show: PropTypes.bool
+    show: PropTypes.bool,
+    discountPercentage: PropTypes.number
 };
 
 
