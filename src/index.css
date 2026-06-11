@@ -1,6 +1,4 @@
-/* .card {
-  text-align: center;
-  background-color: blueviolet;
-  color: aliceblue;
-  padding: 20px;
-} */
+/* Prevent horizontal scroll caused by overflowing elements */
+html, body {
+  overflow-x: hidden;
+}

@@ -1,6 +1,6 @@
 /* Course card */
 .card {
-    background-color: oklch(100% 0 0deg);
+    background-color: #fff;
     max-width: 350px;
     border: 1px solid #cccccc80;
     border-radius: 15px;
@@ -29,19 +29,13 @@
     margin: 0;   
 }
 
-.cardContainer {
-
-}
-
 .courseName {
     display: block;
-    /* height: 7dvh; */
     margin: 0;  
 }
 
 .courseDescription {
     display: block;
-    /* height: 9dvh; */
     margin: auto;  
 }
 
@@ -66,19 +60,41 @@
     margin-right: 10px;
 }
 
+.coursePrice {
+    display: block;
+    margin: 0;
+} 
+
+.courseAuthor {
+    display: block;
+    margin: 0;
+}
+
 /* background-color: #ff9900 */
 .addCart {
     background-color: #2196F3;
-    width: 100%;
+    border-radius: 5px;
     text-align: center;
     display: block;
     margin: auto;
+    width: 100%;
 }
 
 .addCart button {
     background-color: #2196F3;
-    border-color: #2196F3;
     border-style: hidden;
+    border-radius: 5px;
+    color: #fff;
+    font-size: medium;
+    font-weight: bold;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.addedToCart button {
+    background-color: #4caf50;
+    border-style: hidden;
+    border-radius: 5px;
     color: #fff;
     font-size: medium;
     font-weight: bold;

@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import styles from './Course.module.css';
 import heroLogo from './../../assets/hero.png';
 
+import { useState } from 'react';
+
 function Course ({
     courseName = 'Default - React - The Complete Guide (incl. Next.js, Redux)',
     courseDescription = 'Default - Dive in and learn React.js from scratch! Learn React, Hooks, Redux, React Router, Next.js, Best Practices and way more!',
@@ -12,6 +14,14 @@ function Course ({
     show = true
 }) {
     
+    const [addedToCart, setAddedToCart] = useState(false);
+
+    function AddToCart(event, courseName) {
+        // console.log(event);
+        setAddedToCart(!addedToCart);
+        console.log(addedToCart);
+    }
+
     if(show) {
         return (
             <div className={styles.card}>
@@ -36,12 +46,22 @@ function Course ({
                         return (<span key={index} className={`${styles.star} ${starClass}`}>&#9733;</span>);
                     })}
                 </div>
-                
-                <p>Price: &#x20B9;{coursePrice}</p>
-                <p>Author: {courseAuthor}</p>
-                <div className={styles.addCart}>
-                    <button>Add to cart</button>
+                <div className={styles.coursePrice}>
+                    <p>Price: &#x20B9;{coursePrice}</p>
                 </div>
+                <div className={styles.courseAuthor}>
+                    <p>Author: {courseAuthor}</p>
+                </div>
+                <div className={addedToCart ? styles.addedToCart : styles.addCart}>
+                    <button onClick={(event) => AddToCart(event, courseName)}>{addedToCart ? "Added to cart" : "Add to cart"}</button>
+                    
+                    {/* {
+                        !addedToCart 
+                        ? <button onClick={(event) => AddToCart(event, courseName)}>Add to cart</button>
+                        : <button onClick={(event) => AddToCart(event, courseName)}>Add to cart</button>
+                    } */}
+                </div>
+                <p></p>
             </div>
         );
     } else {
