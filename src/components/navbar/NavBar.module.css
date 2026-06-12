@@ -9,6 +9,38 @@ nav {
     padding: 0 24px;
 }
 
+@media (max-width: 720px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        padding: 16px 16px;
+    }
+
+    .logo {
+        position: relative;
+        left: auto;
+        margin: 0 auto 12px;
+        width: 140px;
+    }
+
+    .searchContainer {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .searchContainer input {
+        min-width: 0;
+        height: 40px;
+    }
+
+    .searchContainer button {
+        width: 44px;
+        height: 40px;
+    }
+}
+
 .logo {
     position: absolute;
     left: 24px;
@@ -37,11 +69,12 @@ nav {
     max-width: 520px;
     width: 100%;
     margin: 0 auto;
+    min-width: 0;
 }
 
 .searchContainer input {
     flex: 1;
-    min-width: 180px;
+    min-width: 0;
     padding: 10px 16px;
     font-size: 0.96rem;
     border: 1px solid #cbd5e1;
@@ -63,15 +96,22 @@ nav {
     height: 44px;
     padding: 0;
     font-size: 1rem;
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 1px solid #2563eb;
     border-left: none;
     border-radius: 0 999px 999px 0;
     cursor: pointer;
     font-weight: 700;
     display: grid;
     place-items: center;
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.searchContainer button:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-1px);
 }
 
 /* .searchContainer img {
