@@ -26,6 +26,11 @@ function NavBar({ courses, setCourses, setError }) {
         fetchData(value);
     }
 
+    const handleClear = () => {
+        setSearchText('');
+        fetchData('');
+    }
+
     return (
         <nav>
             <div className={styles.logo}>
@@ -38,7 +43,8 @@ function NavBar({ courses, setCourses, setError }) {
             <div className={styles.searchContainer}>
                 <input type="text" value={searchText}
                  onChange={(event => handleChange(event.target.value))} placeholder="Search courses" />
-                <button>&#128269;</button>
+                {searchText && <button className={styles.clearBtn} onClick={handleClear}>✕</button>}
+                <button className={styles.searchBtn}>&#128269;</button>
             </div>
         </nav>
     );

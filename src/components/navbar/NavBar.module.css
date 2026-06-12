@@ -32,13 +32,21 @@ nav {
 
     .searchContainer input {
         height: 40px;
-        padding-right: 48px;
+        padding-right: 92px;
     }
 
     .searchContainer button {
         width: 38px;
         height: 38px;
         font-size: 1.1rem;
+    }
+
+    .clearBtn {
+        right: 44px !important;
+    }
+
+    .searchBtn {
+        right: 2px;
     }
 }
 
@@ -74,7 +82,7 @@ nav {
 .searchContainer input {
     width: 100%;
     padding: 10px 16px 10px 16px;
-    padding-right: 54px;
+    padding-right: 104px;
     font-size: 0.96rem;
     border: 1px solid #cbd5e1;
     border-radius: 999px;
@@ -92,14 +100,10 @@ nav {
 
 .searchContainer button {
     position: absolute;
-    right: 2px;
     top: 50%;
-    transform: translateY(-50%);
     width: 42px;
     height: 40px;
     padding: 0;
-    font-size: 1.2rem;
-    color: #2563eb;
     background: transparent;
     border: none;
     border-radius: 50%;
@@ -108,9 +112,26 @@ nav {
     display: grid;
     place-items: center;
     transition: color 0.2s, transform 0.2s;
+    transform: translateY(-50%);
 }
 
-.searchContainer button:hover {
+.clearBtn {
+    right: 52px !important;
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+.clearBtn:hover {
+    color: #64748b;
+}
+
+.searchBtn {
+    right: 2px;
+    font-size: 1.2rem;
+    color: #2563eb;
+}
+
+.searchBtn:hover {
     color: #1d4ed8;
     transform: translateY(-50%) scale(1.08);
 }
