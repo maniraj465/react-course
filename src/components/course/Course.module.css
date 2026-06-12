@@ -97,7 +97,7 @@
 
 .addCart button,
 .addedToCart button {
-  width: 70%;
+  width: 60%;
   border: none;
   border-radius: 8px;
   padding: 14px 16px;
@@ -183,6 +183,6 @@ p {
 
   .addCart button,
   .addedToCart button {
-    width: 70%;
+    width: 60%;
   }
 }
