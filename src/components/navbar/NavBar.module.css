@@ -1,5 +1,5 @@
 nav {
-    position: relative;
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,6 +7,8 @@ nav {
     box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
     min-height: 70px;
     padding: 0 24px;
+    top: 0;
+    z-index: 1000;
 }
 
 @media (max-width: 720px) {
@@ -63,17 +65,17 @@ nav {
     object-fit: contain;
 }
 
-.title a {
+/* .title a {
     margin: 0;
     font-size: 1rem;
     font-weight: 700;
     color: #2563eb;
     text-decoration: none;
-}
+} */
 
 .searchContainer {
     position: relative;
-    max-width: 520px;
+    max-width: 640px;
     width: 100%;
     margin: 0 auto;
     min-width: 0;
