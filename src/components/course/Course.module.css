@@ -12,7 +12,7 @@
   color: #0f172a;
   box-shadow: 0 22px 50px rgba(15, 23, 42, 0.08);
   transition: transform 0.3s ease, box-shadow 0.25s ease;
-  min-height: 580px;
+  min-height: 450px;
 }
 
 .card:hover {
@@ -97,7 +97,7 @@
 
 .addCart button,
 .addedToCart button {
-  width: 60%;
+  width: 70%;
   border: none;
   border-radius: 8px;
   padding: 14px 16px;
@@ -183,6 +183,6 @@ p {
 
   .addCart button,
   .addedToCart button {
-    width: 60%;
+    width: 70%;
   }
 }
