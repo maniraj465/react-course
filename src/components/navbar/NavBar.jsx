@@ -12,7 +12,8 @@ function NavBar() {
             
             <div className={styles.searchContainer}>
                 <input type="text" placeholder="Search courses" />
-                <img src ="src\assets\search.png" alt="Search"/>
+                {/* <img src ="src\assets\search.png" alt="Search"/> */}
+                <button>&#128269;</button>
             </div>
         </nav>
     );
