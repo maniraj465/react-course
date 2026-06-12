@@ -1,12 +1,8 @@
 import { useState } from 'react';
-
 import styles from './NavBar.module.css';
 
-function NavBar() {
-const [searchText, setSearchText] = useState('');
-
-    const [courses, setCourses] = useState(null);
-    const [error, setError] = useState(null);
+function NavBar({ courses, setCourses, setError }) {
+    const [searchText, setSearchText] = useState('');
 
     const fetchData = (value) => {
         fetch('http://localhost:3000/courses')
@@ -16,6 +12,7 @@ const [searchText, setSearchText] = useState('');
                     course.courseName.toLowerCase().includes(value.toLowerCase())
                 );
                 setCourses(filteredCourses);
+                setError(null);
                 console.log(filteredCourses);
             })
             .catch(error => {

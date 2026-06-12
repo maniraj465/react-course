@@ -1,23 +1,22 @@
 import Course from '../course/Course';
 import ScrollToTop from '../scrolltotop/ScrollToTop';
 import styles from './CourseList.module.css';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-function CourseList () {
-
-    const [courses, setCourses] = useState(null);
-    const [error, setError] = useState(null);
+function CourseList ({ courses, setCourses, error, setError }) {
     
     useEffect(() => {
-        setTimeout(() => {
-            fetch('http://localhost:3000/courses')
-            .then(response => {console.log(response); return response.json(); })
-            .then(data => setCourses(data))
-            .catch(error => {
-                console.error('Error fetching courses:', error)
-                setError('Failed to fetch courses. Please try again later.');
-            });
-        }, 1000);        
+        if (!courses) {
+            setTimeout(() => {
+                fetch('http://localhost:3000/courses')
+                .then(response => {console.log(response); return response.json(); })
+                .then(data => setCourses(data))
+                .catch(error => {
+                    console.error('Error fetching courses:', error)
+                    setError('Failed to fetch courses. Please try again later.');
+                });
+            }, 1000);        
+        }
     }, []);
 
     
