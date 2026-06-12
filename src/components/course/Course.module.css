@@ -112,14 +112,26 @@
   transform: translateY(-1px);
 }
 
-.addCart button {
+.addCart button:hover {
   background-color: #2563eb;
   color: #ffffff;
+}
+
+.addCart button {
+  background-color: #ffffff;
+  border: 1px solid #2563eb;
+  color: #2563eb;
 }
 
 .addedToCart button {
   background-color: #16a34a;
   color: #ffffff;
+}
+
+.addedToCart button:hover {
+  background-color: #ffffff;
+  border: 1px solid #16a34a;
+  color: #16a34a;
 }
 
 .heart, .heartOutlin {

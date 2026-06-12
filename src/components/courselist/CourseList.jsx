@@ -1,4 +1,5 @@
 import Course from '../course/Course';
+import ScrollToTop from '../scrolltotop/ScrollToTop';
 import styles from './CourseList.module.css';
 import { useState, useEffect } from 'react';
 
@@ -16,7 +17,7 @@ function CourseList () {
                 console.error('Error fetching courses:', error)
                 setError('Failed to fetch courses. Please try again later.');
             });
-        }, 2000);        
+        }, 1000);        
     }, []);
 
     
@@ -34,7 +35,7 @@ function CourseList () {
             </>
         );
     }
-    
+
     function handleHideCourse(courseId) {
         // console.log("Hiding course with id:", courseId);
         setCourses(prevCourses => prevCourses.filter(course => course.id !== courseId));
@@ -52,26 +53,26 @@ function CourseList () {
 
     const courseList = courses.map(
         (course) => <Course 
-                        key = {course.id}
-                        courseName = {course.courseName}
-                        courseDescription = {course.courseDescription}
-                        coursePrice = {course.coursePrice}
-                        courseAuthor = {course.courseAuthor}
-                        courseImg = {course.courseImg}
-                        rating = {course.rating}
-                        show = {course.show}
-                        discountPercentage = {course.discountPercentage}
-                        id = {course.id}
-                        liked = {course.liked}
-                        hideCourse = {handleHideCourse}
-                        likeCourse = {handleLikeCourse}
-                    />
+            key = {course.id}
+            courseName = {course.courseName}
+            courseDescription = {course.courseDescription}
+            coursePrice = {course.coursePrice}
+            courseAuthor = {course.courseAuthor}
+            courseImg = {course.courseImg}
+            rating = {course.rating}
+            show = {course.show}
+            discountPercentage = {course.discountPercentage}
+            id = {course.id}
+            liked = {course.liked}
+            hideCourse = {handleHideCourse}
+            likeCourse = {handleLikeCourse}
+        />
     );
-    
+
     return (
         <div className = {styles.cardContainer}>
             {courseList}
-            <a className={styles.scrollTop} href="#" id="scroll-top">&#x2191;</a>
+            <ScrollToTop />
         </div>
     );
 }

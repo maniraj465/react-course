@@ -19,19 +19,19 @@ nav {
     object-fit: contain; 
 }
 
-.title {
+.title a {
     margin: 0;
     font-size: 1rem;
     font-weight: 700;
     color: #2563eb;
+    text-decoration: none;
 }
 
 .searchContainer {
-    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 0;
-    margin-right: 150px;
+    margin-left: auto;
 }
 
 .searchContainer input {
@@ -41,7 +41,8 @@ nav {
     border-right: none;
     border-radius: 6px 0 0 6px;
     outline: none;
-    width: 280px;
+    width: 40vw;
+    height: 7vh;
     transition: border-color 0.2s;
 }
 
@@ -49,19 +50,16 @@ nav {
     border-color: #2563eb;
 }
 
-.searchContainer button {
+.searchContainer img {
     padding: 8px 18px;
-    font-size: 0.95rem;
-    background-color: #2563eb;
-    color: white;
-    border: 1px solid #2563eb;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: 0 6px 6px 0;
     cursor: pointer;
-    font-weight: 600;
+    height: 7vh;
     transition: background-color 0.2s;
 }
 
-.searchContainer button:hover {
-    background-color: #312e81;
+.searchContainer img:hover {
     border-color: #312e81;
 }

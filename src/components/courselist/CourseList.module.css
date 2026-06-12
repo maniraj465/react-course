@@ -24,21 +24,5 @@
 
 .loading {
   width: 80px;
-}
-
-.scrollTop {
-    text-decoration: none;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 2rem;
-    padding: 10px;
-    position: fixed;
-    bottom: 30px;
-    right: 10px;
-    width: 65px;
-    background: rgba(0, 0, 0, 0.444);
-    color: #fff;
-}
-.scrollTop:hover {
-    background: #2563eb;
+  height: 80px;
 }
