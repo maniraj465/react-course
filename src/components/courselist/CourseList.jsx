@@ -71,7 +71,6 @@ function CourseList ({ courses, setCourses, error, setError }) {
     return (
         <div className = {styles.cardContainer}>
             {courseList}
-            <ScrollToTop />
         </div>
     );
 }

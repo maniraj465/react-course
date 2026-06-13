@@ -1,4 +1,5 @@
 import './App.css'
+import ScrollToTop from './components/scrolltotop/ScrollToTop';
 import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
 import Auth from './components/auth/Auth'
@@ -40,6 +41,7 @@ function App() {
           onLogout={handleLogout}
         />
       </div>
+      <ScrollToTop />
       <Footer />
     </div>
   );
