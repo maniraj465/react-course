@@ -11,7 +11,7 @@ function Course (props) {
     function AddToCart(event, courseName) {
         // console.log(event);
         setAddedToCart(!addedToCart);
-        console.log(addedToCart);
+        // console.log(addedToCart);
     }
 
     if(props.show) {

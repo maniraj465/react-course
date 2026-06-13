@@ -3,10 +3,15 @@ import NavBar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
 import CourseList from './components/courselist/courseList'
 import { useState } from 'react'
+import useFetch from './components/customHooks/useFetch/useFetch';
 
 function App() {
-  const [courses, setCourses] = useState(null);
-  const [error, setError] = useState(null);
+  // const [courses, setCourses] = useState(null);
+  // const [error, setError] = useState(null);
+  const [ courses, error, setCourses, setError ] = useFetch('http://localhost:3000/courses');
+
+  // console.log("courses:", courses);
+  // console.log("error:", error);
 
   return (
     <div className="app">

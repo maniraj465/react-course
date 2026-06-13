@@ -5,19 +5,19 @@ import { useEffect } from 'react';
 
 function CourseList ({ courses, setCourses, error, setError }) {
     
-    useEffect(() => {
-        if (!courses) {
-            setTimeout(() => {
-                fetch('http://localhost:3000/courses')
-                .then(response => {console.log(response); return response.json(); })
-                .then(data => setCourses(data))
-                .catch(error => {
-                    console.error('Error fetching courses:', error)
-                    setError('Failed to fetch courses. Please try again later.');
-                });
-            }, 1000);        
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (!courses) {
+    //         setTimeout(() => {
+    //             fetch('http://localhost:3000/courses')
+    //             .then(response => {console.log(response); return response.json(); })
+    //             .then(data => setCourses(data))
+    //             .catch(error => {
+    //                 console.error('Error fetching courses:', error)
+    //                 setError('Failed to fetch courses. Please try again later.');
+    //             });
+    //         }, 1000);        
+    //     }
+    // }, []);
 
     
     if (!courses) {
