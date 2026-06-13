@@ -74,7 +74,7 @@ nav {
 /* .title a {
     margin: 0;
     font-size: 1rem;
-    fontWeight: 700;
+    font-weight: 700;
     color: #2563eb;
     text-decoration: none;
 } */
@@ -116,7 +116,7 @@ nav {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    fontWeight: 700;
+    font-weight: 700;
     display: grid;
     place-items: center;
     transition: color 0.2s, transform 0.2s;

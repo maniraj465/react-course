@@ -76,7 +76,7 @@
 
 .rating p {
   margin: 0;
-  fontWeight: 600;
+  font-weight: 600;
 }
 
 .coursePrice,
@@ -88,7 +88,7 @@
 
 .discountPrice {
     color: #4caf50;
-    fontWeight: 700;
+    font-weight: 700;
 }
 
 .addCart,
@@ -103,7 +103,7 @@
   border-radius: 8px;
   padding: 14px 16px;
   cursor: pointer;
-  fontWeight: 700;
+  font-weight: 700;
   font-size: 0.95rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
