@@ -1,6 +1,6 @@
 import Course from '../course/Course';
 import ScrollToTop from '../scrolltotop/ScrollToTop';
-import styles from './CourseList.module.css';
+import styles from '../home/Home.module.css';
 import { useEffect } from 'react';
 
 function CourseList ({ courses, setCourses, error, setError }) {

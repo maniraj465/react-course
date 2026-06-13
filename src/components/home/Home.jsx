@@ -1,11 +1,17 @@
 
-function Home() {
+import NavBar from '../navbar/NavBar';
+import CourseList from '../courselist/courseList';
+import styles from './Home.module.css';
+
+function Home({ courses, setCourses, error, setError, onLogout }) {
   return (
-    <div className="home">
-      <h1>Welcome to the Home Page!</h1>
-      <p>This is the main landing page of our application.</p>
+    <div className={styles.home}>
+      <NavBar courses={courses} setCourses={setCourses} setError={setError} onLogout={onLogout} />
+      <main className="content">
+        <CourseList courses={courses} setCourses={setCourses} error={error} setError={setError} />
+      </main>
     </div>
   );
 }
 
-export default Home
+export default Home;

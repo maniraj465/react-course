@@ -1,24 +1,84 @@
 import './App.css'
-import NavBar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
-import CourseList from './components/courselist/courseList'
+import Home from './components/home/Home'
 import { useState } from 'react'
 import useFetch from './components/customHooks/useFetch/useFetch';
 
 function App() {
-  // const [courses, setCourses] = useState(null);
-  // const [error, setError] = useState(null);
-  const [ courses, error, setCourses, setError ] = useFetch('http://localhost:3000/courses');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [loginError, setLoginError] = useState(null);
 
-  // console.log("courses:", courses);
-  // console.log("error:", error);
+  const [courses, error, setCourses, setError] = useFetch('http://localhost:3000/courses', isLoggedIn);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    if (loginEmail.trim() && loginPassword.trim()) {
+      setIsLoggedIn(true);
+      setLoginError(null);
+      return;
+    }
+
+    setLoginError('Please enter both email and password.');
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setLoginEmail('');
+    setLoginPassword('');
+    setLoginError(null);
+    setCourses(null);
+    setError(null);
+  };
+
+  if (!isLoggedIn) {
+    return (
+      <div className="app loginContainer">
+        <div className="loginContent">
+          <div className="loginCard">
+            <h1>Sign in to Tech Courses</h1>
+            <form className="loginForm" onSubmit={handleLogin}>
+              <label>
+                Email
+                <input
+                  type="email"
+                  value={loginEmail}
+                  onChange={(event) => setLoginEmail(event.target.value)}
+                  placeholder="you@example.com"
+                />
+              </label>
+              <label>
+                Password
+                <input
+                  type="password"
+                  value={loginPassword}
+                  onChange={(event) => setLoginPassword(event.target.value)}
+                  placeholder="Enter your password"
+                />
+              </label>
+              <button type="submit">Log in</button>
+            </form>
+            {loginError && <p className="loginError">{loginError}</p>}
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
-    <div className="app">
-      <NavBar courses={courses} setCourses={setCourses} setError={setError} />
-      <main className="content">
-        <CourseList courses={courses} setCourses={setCourses} error={error} setError={setError} />
-      </main>
+    <div className="app appWithFooter">
+      <div className="contentWrapper">
+        <Home
+          courses={courses}
+          setCourses={setCourses}
+          error={error}
+          setError={setError}
+          onLogout={handleLogout}
+        />
+      </div>
       <Footer />
     </div>
   );

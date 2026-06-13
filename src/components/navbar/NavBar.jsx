@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from './NavBar.module.css';
+import styles from '../home/Home.module.css';
 
-function NavBar({ courses, setCourses, setError }) {
+function NavBar({ courses, setCourses, setError, onLogout }) {
     const [searchText, setSearchText] = useState('');
 
     const fetchData = (value) => {
@@ -57,6 +57,9 @@ function NavBar({ courses, setCourses, setError }) {
                 {searchText && <button className={styles.clearBtn} onClick={handleClear}>✕</button>}
                 <button className={styles.searchBtn}>&#128269;</button>
             </div>
+            <button type="button" className={styles.logoutBtn} onClick={onLogout}>
+                Logout
+            </button>
         </nav>
     );
 }
