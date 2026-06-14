@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../home/Home.module.css';
 
 function NavBar({ courses, setCourses, setError, onLogout }) {
     const [searchText, setSearchText] = useState('');
+    const navigate = useNavigate();
 
     const fetchData = (value) => {
         fetch('http://localhost:3000/courses')
@@ -31,7 +33,7 @@ function NavBar({ courses, setCourses, setError, onLogout }) {
     }
 
     return (
-        <nav>
+        <nav className={styles.navbar}>
             <div className={styles.logo}>
                 {/* <img src="src\assets\tech-courses-logo.png" alt="courses logo" /> */}
 
@@ -57,7 +59,7 @@ function NavBar({ courses, setCourses, setError, onLogout }) {
                 {searchText && <button className={styles.clearBtn} onClick={handleClear}>✕</button>}
                 <button className={styles.searchBtn}>&#128269;</button>
             </div>
-            <button type="button" className={styles.logoutBtn} onClick={onLogout}>
+            <button type="button" className={styles.logoutBtn} onClick={() => { onLogout && onLogout(); navigate('/login'); }}>
                 Logout
             </button>
         </nav>

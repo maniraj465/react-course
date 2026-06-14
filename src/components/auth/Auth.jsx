@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Auth.module.css';
 
 function Auth({ onLoginSuccess }) {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -12,6 +14,7 @@ function Auth({ onLoginSuccess }) {
     if (loginEmail.trim() && loginPassword.trim()) {
       setLoginError(null);
       onLoginSuccess();
+      navigate('/');
       return;
     }
 
