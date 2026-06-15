@@ -1,11 +1,12 @@
 import './App.css'
 import ScrollToTop from './components/scrolltotop/ScrollToTop';
-import Footer from './components/footer/Footer'
-import Home from './components/home/Home'
-import Auth from './components/auth/Auth'
-import ProtectedRoute from './components/auth/ProtectedRoute'
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { useState } from 'react'
+import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import ViewPost from './components/viewcourse/ViewCourse';
+import Auth from './components/auth/Auth';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useState } from 'react';
 import useFetch from './components/customHooks/useFetch/useFetch';
 
 function App() {
@@ -40,6 +41,17 @@ function App() {
                   setCourses={setCourses}
                   error={error}
                   setError={setError}
+                  onLogout={handleLogout}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/course/:id"
+            element={
+              <ProtectedRoute isAuthenticated={isLoggedIn}>
+                <ViewPost
+                  course={courses}
                   onLogout={handleLogout}
                 />
               </ProtectedRoute>

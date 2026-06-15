@@ -15,7 +15,7 @@ const useFetch = (url, enabled = true) => {
                     // console.error('Error fetching data:', error)
                     setError('Failed to fetch data. Please try again later.');
                 });
-            }, 1000);
+            }, 100);
 
             return () => clearTimeout(timer);
         }

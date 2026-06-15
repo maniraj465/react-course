@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import styles from './Course.module.css';
 import heroLogo from './../../assets/hero.png';
-
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Course (props) {
     
+    const navigate = useNavigate();
+
     const [addedToCart, setAddedToCart] = useState(false);
 
     function AddToCart(event, courseName) {
@@ -17,15 +19,17 @@ function Course (props) {
     if(props.show) {
         return (
             <div className={styles.card}>
-                <div className={styles.courseImg}>
-                    <img src={props.courseImg ? props.courseImg : heroLogo} alt="Course Logo" />
-                </div>
-                <div className={styles.courseName}>
-                    <h3>{props.courseName}</h3>
-                </div>
-                <div className={styles.courseDescription}>
-                    <p>{props.courseDescription.length > 100 ? `${props.courseDescription.substring(0, 500)}...` : props.courseDescription}</p> 
-                    {/* <p>{courseDescription}</p>  */}
+                <div className={styles.courseHeader} onClick={() => navigate('/course/' + props.id)}>
+                    <div className={styles.courseImg}>
+                        <img src={props.courseImg ? props.courseImg : heroLogo} alt="Course Logo" />
+                    </div>
+                    <div className={styles.courseName}>
+                        <h3>{props.courseName}</h3>
+                    </div>
+                    <div className={styles.courseDescription}>
+                        <p>{props.courseDescription.length > 100 ? `${props.courseDescription.substring(0, 500)}...` : props.courseDescription}</p> 
+                        {/* <p>{courseDescription}</p>  */}
+                    </div>
                 </div>
                 
                 <div className={styles.rating}>
