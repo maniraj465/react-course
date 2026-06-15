@@ -78,6 +78,12 @@ function ViewCourse() {
                 </div>
             </div>
         );
+    } else {
+        return (
+            <div className={styles.viewCourseCard}>
+                <h3>Course details not available</h3>
+            </div>
+        );
     }
 }
 
